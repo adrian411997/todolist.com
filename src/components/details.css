@@ -90,3 +90,10 @@
     width: 80%;
   }
 }
+.btn-show {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-bottom: 5px;
+}

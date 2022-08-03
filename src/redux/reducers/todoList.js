@@ -53,6 +53,11 @@ const todoListSlice = createSlice({
         info.payload.place
       ].completed = false;
     },
+    pushNewItems: (state, info) => {
+      info.payload.newItems.forEach((arr) =>
+        state.todoList[info.payload.params].cosasphacer.push(arr)
+      );
+    },
   },
 });
 export const {
@@ -64,6 +69,7 @@ export const {
   changeTodoListItem,
   completed,
   notCompleted,
+  pushNewItems,
 } = todoListSlice.actions;
 
 export default todoListSlice.reducer;

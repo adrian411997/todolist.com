@@ -7,7 +7,7 @@ import Header from "./header";
 const Body = () => {
   const navigate = useNavigate();
   const [todoItem, setTodoItem] = useState([]);
-
+  const [spanErrorItem, setSpanErrorItem] = useState("");
   const [error, setError] = useState("");
   const [nombre, setNombre] = useState("");
   const dispatch = useDispatch();
@@ -32,6 +32,14 @@ const Body = () => {
     } else {
       setError("");
       setNombre(e.target.value);
+    }
+  };
+  const verifTodoItem = (e) => {
+    let foundItem = todoItem.filter((ti) => ti.desc === e.target.value);
+    if (foundItem.length > 0) {
+      setSpanErrorItem("Ya hay una tarea con este nombre");
+    } else {
+      setSpanErrorItem("");
     }
   };
   const handleVerif = (e) => {
@@ -161,14 +169,15 @@ const Body = () => {
                 <input
                   placeholder="Ingrese una tarea"
                   id="desc"
-                  onChange={handleVerif}
+                  onChange={verifTodoItem}
                   onKeyDown={pressEnter}
                 />
               </div>
               <div className="addItemButton">
                 <button
-                  disabled={verif.length === 0}
+                  disabled={spanErrorItem.length > 0}
                   id="btn1"
+                  onChange={verifTodoItem}
                   onClick={plusItem}
                 >
                   <svg
@@ -205,6 +214,7 @@ const Body = () => {
                 </button>
               </div>
             </div>
+            <span className="errorInput">{spanErrorItem}</span>
             <div className="btn-finish">
               <button
                 disabled={nombre.length === 0 || todoItem.length === 0}
