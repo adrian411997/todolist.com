@@ -76,3 +76,17 @@
   color: white;
   cursor: pointer;
 }
+@media (max-width: 766px) {
+  .details-content {
+    width: 90%;
+  }
+  .list-moredesc {
+    width: 100%;
+  }
+  .input-details {
+    width: 70%;
+  }
+  .list-desc-item {
+    width: 80%;
+  }
+}
