@@ -1,0 +1,207 @@
+header {
+  display: flex;
+  align-items: center;
+  background-color: orange;
+  padding: 10px 0px;
+}
+
+.icon-header img {
+  width: 50px;
+  height: 50px;
+}
+.icon-header {
+  margin-left: 20px;
+}
+.title-header h1 {
+  color: white;
+}
+
+.content-master {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content {
+  width: 70%;
+  padding: 10px;
+}
+.content-title {
+  padding: 15px;
+  text-align: center;
+}
+.content-cards {
+  padding: 10px 0px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 10px;
+  height: 30vh;
+  width: 30vh;
+  cursor: pointer;
+  margin: 10px 5px;
+  border-radius: 0.25em;
+}
+div.card:last-child {
+  color: grey;
+  text-align: center;
+  border: 2px solid black;
+  border-style: dashed;
+
+  background-color: #e0e2e5;
+  height: 30vh;
+  width: 30vh;
+}
+.no-show {
+  display: none;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputs > input {
+  margin: 10px 0px;
+  padding: 10px 5px;
+  border-radius: 0.25em;
+  border: 0px;
+  width: 50%;
+}
+.list-desc {
+  display: flex;
+}
+.title-desc > li {
+  list-style: circle;
+  margin: 10px 0px;
+}
+#btn,
+#btn1 {
+  margin: 10px 0px;
+}
+.list {
+  width: 50%;
+}
+.title-desc {
+  width: 75%;
+}
+.closeButton {
+  width: 25%;
+  display: flex;
+  justify-content: end;
+}
+.closeButton > button {
+  background-color: rgb(240, 242, 245);
+  border: 0px;
+  cursor: pointer;
+}
+.addItem {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.addItem input {
+  margin: 10px 0px;
+  padding: 10px 5px;
+  border-radius: 0.25em;
+  border: 0px;
+  width: 100%;
+}
+
+.inputAddItem {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+}
+.addItemButton {
+  width: 20%;
+  display: flex;
+  justify-content: end;
+}
+.addItemButton button {
+  width: 50%;
+  padding: 5px 0px;
+  background-color: #5cb85c;
+  border: none;
+  cursor: pointer;
+}
+.btn-add {
+  color: white;
+  width: 20%;
+  padding: 10px 0px;
+
+  border: 0px;
+  background-color: #5cb85c;
+  cursor: pointer;
+}
+.btn-finish {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.btn-finish button {
+  margin: 0px 10px;
+}
+.btn-cancel {
+  color: white;
+  width: 20%;
+  padding: 10px 0px;
+
+  border: 0px;
+  background-color: rgb(220, 53, 69);
+  cursor: pointer;
+}
+#closeIcon {
+  position: absolute;
+  top: -10px;
+  right: -9px;
+}
+.btn-circle {
+  border-radius: 0.25em;
+  padding: 2px;
+  background-color: rgb(220, 53, 69);
+  color: white;
+  cursor: pointer;
+}
+.errorInput {
+  color: red;
+}
+.footer {
+  padding: 20px 0px;
+  text-align: center;
+}
+@media (max-width: 1126px) {
+  .content-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 766px) {
+  .content-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .inputs > input {
+    width: 100% !important;
+  }
+  .addItem {
+    width: 100%;
+  }
+  .list {
+    width: 100%;
+  }
+  .btn-finish {
+    width: 100%;
+  }
+  .btn-finish button {
+    padding: 5px;
+  }
+}
