@@ -25,6 +25,8 @@ const Details = () => {
   const [editar, setEditar] = useState(false);
   const [todoEdit, setTodoEdit] = useState("");
   const [newTodoItem, setNewTodoItem] = useState("");
+  const [todoItemdesc, setTodoItemDesc] = useState("");
+  console.log(todoItemdesc.length);
   const edit = (e) => {
     setEditar(true);
   };
@@ -62,8 +64,13 @@ const Details = () => {
     }
   };
   const verifTodoItem = (e) => {
+    setTodoItemDesc(e.target.value);
     let foundItem = todoItem.filter((ti) => ti.desc === e.target.value);
-    if (foundItem.length > 0) {
+    let foundIteminState = list[params].cosasphacer.filter(
+      (li) => li.desc === e.target.value
+    );
+    console.log(foundIteminState);
+    if (foundItem.length > 0 || foundIteminState.length > 0) {
       setSpanErrorItem("Ya hay una tarea con este nombre");
     } else {
       setSpanErrorItem("");
@@ -143,6 +150,7 @@ const Details = () => {
     let newItem = document.getElementById("desc").value;
     document.getElementById("desc").value = "";
     setTodoItem([...todoItem, { desc: newItem, complete: false }]);
+    setTodoItemDesc("");
   };
   const modifyStatePush = (e) => {
     let info = { newItems: todoItem, params: params };
@@ -354,8 +362,7 @@ const Details = () => {
               <div className="addItemButton">
                 <button
                   disabled={
-                    spanErrorItem.length > 0 ||
-                    document.getElementById("desc").value.length < 1
+                    spanErrorItem.length > 0 || todoItemdesc.length === 0
                   }
                   id="btn1"
                   onClick={pushList}
